@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tsukuyomi — Giỏ hàng</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    /* Hoạt động là được 😎 */
+    #cart {
+      padding: 1%;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="navbar">
+    <script src="../assets/js/import-components.js?components=navbar"></script>
+  </header>
+
+  <div id="cart">
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>Sản phẩm</th>
+          <th>Số lượng</th>
+          <th>Giá</th>
+          <th>Tổng</th>
+          <th>Trả góp (12 tháng)</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="cart-body"></tbody>
+    </table>
+
+    <div class="summary">
+      <strong id="total-items">Tổng số lượng: 0</strong><br>
+      <strong id="total-price">Tổng cộng: 0₫</strong><br>
+      <strong id="monthly-price">Trả góp mỗi tháng (12 tháng): 0₫/tháng</strong>
+    </div>
+
+    <div class="summary">
+      <button id="purcharse">Thanh toán giỏ hàng</button>
+      <button id="clear-cart">Xóa toàn bộ giỏ hàng</button>
+    </div>
+
+    <div id="bill-popup">
+      <div id="bill-container">
+        <h2>Hóa đơn thanh toán</h2>
+        <div id="bill-content"></div>
+        <div style="text-align:center;">
+          <button id="close-bill">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../assets/js/cart-actions.js"></script>
+</body>
+
+</html>

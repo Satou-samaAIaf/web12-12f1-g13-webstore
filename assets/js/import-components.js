@@ -8,18 +8,18 @@
     const loadCss = urlParams.get('css') !== 'false';  // Optional: css=false will disable CSS loading
     const loadJs = urlParams.get('js') !== 'false';    // Optional: js=false will disable JS loading
 
-    if (!componentsParam) {
+    if (!componentsParam) { 
         console.error('import.js: No "components" parameter specified.');
         return;
     }
 
-    // Split into an array and clean up whitespace
+    // Get baseUrl (assets/)
     const components = componentsParam.split(',').map(item => item.trim());
-
-    // Base URL for the assets (adjusted for your relative path)
-    const baseUrl = window.location.hostname.includes("github.io") 
-    ? `${window.location.origin}/ICT-project/assets`
-    : `${window.location.origin}/assets`;
+    const scriptPath = script.src.split('?')[0];
+    const pathSegments = scriptPath.split('/');
+    pathSegments.pop();
+    pathSegments.pop();
+    const baseUrl = pathSegments.join('/');
 
     components.forEach(fileName => {
         const htmlPath = `${baseUrl}/html/${fileName}.html`;
